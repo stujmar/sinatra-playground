@@ -6,6 +6,6 @@ gem instal sinatra
 gem install thin
 
 > fixing some weird thing
-`gem install eventmachine --platform ruby`
+`gem install eventmachine --platform ruby `
 
 gem install sinatra-reloader
