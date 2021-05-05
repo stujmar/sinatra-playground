@@ -25,10 +25,19 @@ get '/say/*/to/*' do
   params['splat']
 end
 
-# Or with blick parameters:
+# Or with block parameters:
 get '/download/*.*' do |path, ext|
   [path, ext] # => ["path/to/file, "xml"]
 end
+
+# Route Matching with Regular Expressions:
+get /\/hello\/([\w]+)/ do
+  "Hello, #{params['captures'].first}!"
+end
+
+# Or with block parameter:
+get %r{/what/([\w]+)} do |c|
+  
 
 post '/post' do
   # create something#
