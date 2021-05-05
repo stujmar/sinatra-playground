@@ -61,6 +61,16 @@ get '\A/mustard\z', :mustermann_opts => { :type => :regexp, :check_anchors => fa
   "If you match an anchored pattern clab your hands?"
 end
 
+# Conditions
+# Routes may include a variety of matching conditions, such as the user agent:
+get '/food', :agent => /Songbird (\d\.\d)[\d\/]*?/ do
+  "You're using Songbird version #{params['agent'][0]}"
+end
+
+get '/food' do
+  "Matching non-songbird browers"
+end
+
 post '/post' do
   # create something#
   end
