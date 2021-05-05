@@ -46,11 +46,12 @@ get '/toasts/:format?' do
 end # interesting don't know how to retrieve slug.
 
 # Query parameters:
-get '/posts/' do
+get '/posts' do
   # matches "GET /posts?title=foo&author=bar"
   title = params['title']
   author = params['author']
   # uses title and author variables; query is optional to the /posts route
+  "#{title} #{author}"
 end
 
 post '/post' do
