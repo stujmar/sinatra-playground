@@ -54,6 +54,13 @@ get '/posts' do
   "#{title} #{author}"
 end
 
+# By the way, unless you disable the path traversal attack protection. the request path might be modified before matching against your routes?
+# You may customize the Mustermann options used for a given route by passing in a :mustermann_opts hash:
+get '\A/mustard\z', :mustermann_opts => { :type => :regexp, :check_anchors => false } do
+  # Matches /posts exactly, with explicit anchoring
+  "If you match an anchored pattern clab your hands?"
+end
+
 post '/post' do
   # create something#
   end
