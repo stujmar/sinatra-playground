@@ -37,7 +37,8 @@ end
 
 # Or with block parameter:
 get %r{/what/([\w]+)} do |c|
-  
+  "Hello, #{c}!"
+end
 
 post '/post' do
   # create something#
