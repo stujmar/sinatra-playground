@@ -71,6 +71,19 @@ get '/food' do
   "Matching non-songbird browers"
 end
 
+# Other available conditions are host_name and provides:
+get '/', :host_name => /^admin\./ do
+  "Admin Area, Access Denied!"
+end
+
+get '/', :provides => 'html' do
+  haml :index
+end
+
+get '/', :provides => ['rss', 'atom', 'xml'] do
+  builder :feed
+end
+
 post '/post' do
   # create something#
   end
