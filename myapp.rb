@@ -19,9 +19,15 @@ get '/bye/:name' do |n|
   "Buh bye #{n}!"
 end
 
+# Route patterns may also include splat (or wildcard) parameters, accessible via the params['splat'] array:
 get '/say/*/to/*' do
   # matches /say/hello/to/world
   params['splat']
+end
+
+# Or with blick parameters:
+get '/download/*.*' do |path, ext|
+  [path, ext] # => ["path/to/file, "xml"]
 end
 
 post '/post' do
