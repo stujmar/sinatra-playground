@@ -40,6 +40,11 @@ get %r{/what/([\w]+)} do |c|
   "Hello, #{c}!"
 end
 
+# Routes can have optional parameters:
+get '/toasts/:format?' do
+  # Matches "GET /posts/" and any extention "GET /post/json", "GET /posts/xml" etc
+end # interesting don't know how to retrieve slug.
+
 post '/post' do
   # create something#
   end
