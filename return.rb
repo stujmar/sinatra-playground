@@ -62,3 +62,10 @@ get '/time' do
     code = "<%= Time.now %>"
     erb code
 end
+
+
+
+# Any options not understood by Sinatra will be passed on to the engine:
+# get '/html' do
+#     haml :html, :format => :html5
+# end
