@@ -84,6 +84,18 @@ get '/', :provides => ['rss', 'atom', 'xml'] do
   builder :feed
 end
 
+# You can easily define your own conditions:
+set(:probability) { |value| condition { rand <= value } }
+get '/win_a_car', :probability => 0.1 do
+  "You won!"
+end
+
+get '/win_a_car' do
+  "Sorry you lost."
+end
+
+
+
 post '/post' do
   # create something#
   end
