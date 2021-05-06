@@ -9,3 +9,5 @@ gem install thin
 `gem install eventmachine --platform ruby `
 
 gem install sinatra-reloader
+
+Testing a commit from laptop.
