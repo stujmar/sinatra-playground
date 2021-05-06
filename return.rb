@@ -51,3 +51,7 @@ end
 set :public_folder, __dir__ + '/styles' # can't get to work
 
 # Views / Template
+
+get '/home' do
+    erb :index
+end
