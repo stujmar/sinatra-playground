@@ -52,6 +52,13 @@ set :public_folder, __dir__ + '/styles' # can't get to work
 
 # Views / Template
 
+# link to a .erb file that lives in /views
 get '/home' do
     erb :index
+end
+
+# or embed the template content directly
+get '/time' do
+    code = "<%= Time.now %>"
+    erb code
 end
