@@ -39,3 +39,9 @@ get // do
     pass if request.path_info == "/index"
     # ...
 end
+
+# or using a negative look ahead:
+
+get %r{(?!/index)} do
+    # ...
+end
