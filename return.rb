@@ -9,6 +9,10 @@ class Stream
     end
 end
 
+get '/who-is-the-smartest' do
+    "Ally"
+end
+
 get('/') { Stream.new }
 
 # Custom Route Matchers
